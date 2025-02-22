@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieMatch - Profile</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body class="profile-page">
+  <nav class="browse-nav">
+    <div class="nav-left">
+      <svg class="moviematch-logo" viewBox="0 0 200 50">
+        <text x="10" y="35" class="logo-text">MovieMatch</text>
+      </svg>
+      <div class="nav-links">
+        <a href="movies.html">Movies</a>
+        <a href="sports.html">Sports</a>
+        <a href="TVseries.html">TV-series</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <div class="user-profile active">
+       
+      </div>
+    </div>
+  </nav>
+
+  <main class="profile-content">
+    <div class="profile-header">
+      <div class="profile-info">
+        <div class="profile-pic-container">
+          <img src="https://via.placeholder.com/150?text=+" alt="User" class="large-profile-pic">
+          <div class="profile-pic-overlay">
+            <button class="change-pic-btn">Change Photo</button>
+          </div>
+        </div>
+        <div class="profile-text">
+          <h1 contenteditable="true" class="editable-name" data-placeholder="Enter your name"></h1>
+          <p>Member since <span id="memberSince"></span></p>
+          <span class="subscription-badge" id="currentPlan"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-sections">
+      <section class="downloads-section">
+        <h2>My Downloads</h2>
+        <div class="downloads-grid">
+          <!-- Will be populated by JavaScript -->
+          <div class="empty-state">
+            <p>No downloads yet</p>
+            <a href="movies.html" class="browse-movies-btn">Browse Movies</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="watchlist-section">
+        <h2>My Watchlist</h2>
+        <div class="watchlist-grid">
+          <!-- Will be populated by JavaScript -->
+          <div class="empty-state">
+            <p>Your watchlist is empty</p>
+            <a href="movies.html" class="browse-movies-btn">Browse Movies</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="viewing-history">
+        <h2>Recently Watched</h2>
+        <div class="history-grid">
+          <!-- Will be populated by JavaScript -->
+          <div class="empty-state">
+            <p>No watch history yet</p>
+            <a href="movies.html" class="browse-movies-btn">Start Watching</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="account-settings">
+        <h2>Account Settings</h2>
+        <div class="settings-grid">
+          <div class="settings-card">
+            <h3>Profile</h3>
+            <form id="profileForm">
+              <div class="form-group">
+                <label>Display Name</label>
+                <input type="text" placeholder="Enter your name">
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="Enter your email">
+              </div>
+              <div class="form-group">
+                <label>Language</label>
+                <select>
+                  <option value="">Select language</option>
+                  <option value="en">English</option>
+                  <option value="es">Español</option>
+                  <option value="fr">Français</option>
+                  <option value="de">Deutsch</option>
+                </select>
+              </div>
+              <button type="submit">Save Changes</button>
+            </form>
+          </div>
+         
+
+          <div class="settings-card">
+            <h3>Subscription</h3>
+            <div class="subscription-info" id="subscriptionInfo">
+              <div class="current-plan">
+                <h4>Current Plan</h4>
+                <p id="planName">Basic Plan</p>
+                <p class="subscription-price" id="planPrice">$8.99/month</p>
+                <p class="renewal-date" id="renewalDate">Next billing date: -</p>
+              </div>
+              
+              <div class="plan-options">
+                <h4>Available Plans</h4>
+                <div class="plan-selector">
+                  <label class="plan-option">
+                    <input type="radio" name="plan" value="basic-monthly">
+                    <div class="plan-details">
+                      <span class="plan-name">Basic Monthly</span>
+                      <span class="plan-price">$8.99/month</span>
+                    </div>
+                  </label>
+                  
+                  <label class="plan-option">
+                    <input type="radio" name="plan" value="standard-monthly">
+                    <div class="plan-details">
+                      <span class="plan-name">Standard Monthly</span>
+                      <span class="plan-price">$13.99/month</span>
+                    </div>
+                  </label>
+                  
+                  <label class="plan-option">
+                    <input type="radio" name="plan" value="premium-yearly">
+                    <div class="plan-details">
+                      <span class="plan-name">Premium Yearly</span>
+                      <span class="plan-price">$179.99/year</span>
+                      <span class="save-badge">Save 17%</span>
+                    </div>
+                  </label>
+                </div>
+                <button class="change-plan-btn">Update Plan</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <h3>Preferences</h3>
+            <div class="preferences-list">
+              <label class="preference-item">
+                <input type="checkbox"> Autoplay next episode
+              </label>
+              <label class="preference-item">
+                <input type="checkbox"> Email notifications
+              </label>
+              <label class="preference-item">
+                <input type="checkbox"> Push notifications
+              </label>
+              <label class="preference-item">
+                <input type="checkbox"> New releases notifications
+              </label>
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <h3>Security</h3>
+            <button class="change-password-btn">Change Password</button>
+            <button class="logout-btn">Sign Out</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <dialog class="change-password-modal">
+    <div class="modal-content">
+      <h3>Change Password</h3>
+      <form id="passwordForm">
+        <input type="password" placeholder="Current Password" required>
+        <input type="password" placeholder="New Password" required>
+        <input type="password" placeholder="Confirm New Password" required>
+        <div class="modal-buttons">
+          <button type="button" class="cancel-btn">Cancel</button>
+          <button type="submit" class="save-btn">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <section class="Dashboard">
+    <h2>Dashboard</h2>
+    <div class="history-grid">
+      <!-- Will be populated by JavaScript -->
+      <div class="empty-state">
+        <a href="Dashboard.html" class="browse-movies-btn">Admin</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="profile.js"></script>
+</body>
+</html>

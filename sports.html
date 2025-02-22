@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieMatch - Live Sports</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="sports.css">
+</head>
+<body class="sports-page">
+  <nav class="browse-nav">
+    <div class="nav-left">
+      <svg class="moviematch-logo" viewBox="0 0 200 50">
+        <defs>
+          <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:var(--army-green);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:var(--army-light);stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <text x="10" y="35" class="logo-text">
+          <tspan fill="var(--army-green)">Movie</tspan>
+          <tspan fill="var(--army-light)">Match</tspan>
+        </text>
+        <path d="M8 40 L192 40" stroke="url(#logoGradient)" stroke-width="2" />
+      </svg>
+      <div class="nav-links">
+        <a href="movies.html">Movies</a>
+        <a href="sports.html" class="active">Sports</a>
+        <a href="TVseries.html">TV-series</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <input type="search" placeholder="Search matches..." class="search-bar">
+      <div class="profile-menu">
+        <img src="https://via.placeholder.com/32" alt="User" class="profile-pic">
+        <div class="dropdown-menu">
+          <a href="profile.html">Profile</a>
+          <a href="movies.html">Movies</a>
+          <a href="sports.html">Sports</a>
+          <a href="TVseries.html">TV-series</a>
+          <button class="logout-btn">Sign Out</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="sports-content">
+    <div class="sports-hero">
+      <h1>Live Sports</h1>
+      <p>Experience the thrill of live matches powered by 808 Live</p>
+      <div class="stream-badge">
+        <img src="https://via.placeholder.com/20" alt="" class="stream-provider-logo">
+        Powered by 808 Live
+      </div>
+    </div>
+
+    <section class="live-matches">
+      <div class="section-header">
+        <h2>Live Now</h2>
+        <div class="live-indicator-global">
+          <span class="provider-badge">808 LIVE</span>
+          MATCHES
+        </div>
+      </div>
+      <div class="matches-grid" id="liveMatches"></div>
+    </section>
+    
+    <section class="upcoming-matches">
+      <div class="section-header">
+        <h2>Upcoming Matches</h2>
+        <div class="filter-matches">
+          <select id="competitionFilter">
+            <option value="all">All Competitions</option>
+            <option value="Premier League">Premier League</option>
+            <option value="La Liga">La Liga</option>
+            <option value="Serie A">Serie A</option>
+            <option value="Bundesliga">Bundesliga</option>
+            <option value="Ligue 1">Ligue 1</option>
+          </select>
+        </div>
+      </div>
+      <div class="matches-grid" id="upcomingMatches"></div>
+    </section>
+
+    <dialog class="stream-player-dialog">
+      <div class="stream-player-content">
+        <div class="stream-header">
+          <h2 id="streamTitle"></h2>
+          <button class="close-stream">×</button>
+        </div>
+        <div class="stream-player">
+          <iframe id="streamFrame" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="stream-info">
+          <div class="stream-quality">
+            <button class="quality-btn active" data-quality="720p">720p</button>
+            <button class="quality-btn" data-quality="1080p">1080p</button>
+          </div>
+          <div class="stream-stats">
+            <span id="viewerCount">0 viewers</span>
+            <span class="stream-status">LIVE</span>
+          </div>
+        </div>
+      </div>
+    </dialog>
+  </main>
+  <script src="sports.js"></script>
+</body>
+</html>

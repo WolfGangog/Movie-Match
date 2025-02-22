@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #2C3E50; color: #ECF0F1; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: #34495E; padding: 20px; border-radius: 10px; }
+        input, select, button { display: block; width: 100%; margin: 10px 0; padding: 10px; }
+        table { width: 100%; margin-top: 20px; border-collapse: collapse; }
+        th, td { padding: 10px; border-bottom: 1px solid #ECF0F1; text-align: left; }
+        th { background: #16A085; }
+        .loading { text-align: center; display: none; }
+        .delete-btn { background: red; color: white; border: none; padding: 5px 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Upload Movie / TV Series</h2>
+        <form id="uploadForm" action="upload.php" method="POST" enctype="multipart/form-data">
+            <input type="text" name="title" placeholder="Title" required>
+            <select name="category">
+                <option value="Movie">Movie</option>
+                <option value="TV Series">TV Series</option>
+            </select>
+            <select name="genre">
+                <option value="Action">Action</option>
+                <option value="Drama">Drama</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Horror">Horror</option>
+            </select>
+            <input type="file" name="file" id="fileInput" accept="video/*" required>
+            <button type="submit">Upload</button>
+            <p id="uploadStatus"></p>
+        </form>
+        <h2>Uploaded Movies</h2>
+        <p class="loading" id="loadingMovies">Loading movies...</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>Preview</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="movieList"></tbody>
+        </table>
+        <h2>Uploaded TV Series</h2>
+        <p class="loading" id="loadingTV">Loading TV Series...</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>Preview</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="tvSeriesList"></tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("loadingMovies").style.display = "block";
+            document.getElementById("loadingTV").style.display = "block";
+            
+            fetch("uploads/media.json?timestamp=" + new Date().getTime())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Media file not found or inaccessible.");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    document.getElementById("loadingMovies").style.display = "none";
+                    document.getElementById("loadingTV").style.display = "none";
+                    
+                    let movieList = document.getElementById("movieList");
+                    let tvSeriesList = document.getElementById("tvSeriesList");
+                    
+                    if (!Array.isArray(data) || data.length === 0) {
+                        document.getElementById("loadingMovies").innerText = "No movies found.";
+                        document.getElementById("loadingTV").innerText = "No TV series found.";
+                        return;
+                    }
+                    
+                    data.forEach(item => {
+                        let newRow = `<tr>
+                            <td>${item.title}</td>
+                            <td>${item.genre}</td>
+                            <td><video width="100" controls><source src="${item.file}" type="video/mp4"></video></td>
+                            <td><button class='delete-btn' onclick="deleteMedia('${item.title}')">Delete</button></td>
+                        </tr>`;
+                        
+                        if (item.category === "Movie") {
+                            movieList.innerHTML += newRow;
+                        } else {
+                            tvSeriesList.innerHTML += newRow;
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error("Error loading media:", error);
+                    document.getElementById("loadingMovies").innerText = "No movies found or failed to load.";
+                    document.getElementById("loadingTV").innerText = "No TV series found or failed to load.";
+                });
+        });
+    </script>
+</body>
+</html>

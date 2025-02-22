@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieMatch - TV Series</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="TVseries.css">
+</head>
+<body class="browse-page">
+    <nav class="browse-nav">
+        <div class="nav-left">
+          <svg class="moviematch-logo" viewBox="0 0 200 50">
+            <defs>
+              <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:var(--army-green);stop-opacity:1" />
+                <stop offset="100%" style="stop-color:var(--army-light);stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <text x="10" y="35" class="logo-text">
+              <tspan fill="var(--army-green)">Movie</tspan>
+              <tspan fill="var(--army-light)">Match</tspan>
+            </text>
+            <path d="M8 40 L192 40" stroke="url(#logoGradient)" stroke-width="2" />
+          </svg>
+          <div class="nav-links">
+            <a href="movies.html">Movies</a>
+            <a href="sports.html">Sports</a>
+            <a href="TVseries.html" class="active">TV-series</a>
+          </div>
+        </div>
+        <div class="nav-right">
+          <input type="search" placeholder="Search TV Series..." class="search-bar">
+          <div class="user-profile">
+            <a href="profile.html">
+              <img src="https://via.placeholder.com/32" alt="User" class="profile-pic">
+            </a>
+          </div>
+        </div>
+    </nav>
+    <main>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search TV Series...">
+            <button id="search-button">Search</button>
+        </div>
+        <section id="tv-series-list">
+            <!-- TV series articles will be dynamically inserted here -->
+        </section>
+        <section class="tv-series-section">
+            <h1>Popular TV Series</h1>
+            <div class="series-category">
+                <h2>Category 1</h2>
+                <div class="series-list">
+                    <div class="video-container">
+                        <video controls>
+                            <source src=C:\Users\Gibson\Desktop\MovieMatch\kaiju8\Kaiju No 8 S01 E01.mp4 type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-details">
+                            <h2>Video Title 1</h2>
+                            <p>Video description goes here. This is a brief summary of the video content.</p>
+                        </div>
+                    </div>
+                    <div class="video-container">
+                        <video controls>
+                            <source src="path/to/your/video2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-details">
+                            <h2>Video Title 2</h2>
+                            <p>Video description goes here. This is a brief summary of the video content.</p>
+                        </div>
+                    </div>
+                    <!-- Add more video containers as needed -->
+                </div>
+            </div>
+            <!-- Add more series categories as needed -->
+        </section>
+        <section class="media-queue">
+            <h2>My Queue</h2>
+            <div class="queue-container" id="queueContainer"></div>
+        </section>
+    </main>
+    <script src="TVseries.js"></script>
+</body>
+</html>

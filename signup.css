@@ -1,0 +1,218 @@
+.signup-page {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('https://assets.nflxext.com/ffe/siteui/vlv3/39f3c979-c105-4948-9c51-611eedf45e49/71ec68fa-1965-4f32-bd83-486428c8f108/US-en-20230612-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+  min-height: 100vh;
+}
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 60px 0;
+}
+
+.signup-box {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 60px;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 450px;
+}
+
+.signup-box h1 {
+  margin-bottom: 28px;
+  color: var(--off-white);
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.signup-form input {
+  padding: 16px;
+  border-radius: 4px;
+  border: none;
+  background: #333;
+  color: var(--off-white);
+}
+
+.plan-selection {
+  margin: 20px 0;
+}
+
+.plan-selection h3 {
+  color: var(--off-white);
+  margin-bottom: 15px;
+}
+
+.plan-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plan {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid var(--army-light);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.plan:hover {
+  background-color: rgba(75, 83, 32, 0.2);
+}
+
+.plan input[type="radio"] {
+  margin-right: 15px;
+}
+
+.plan-details {
+  color: var(--off-white);
+}
+
+.plan-details h4 {
+  margin-bottom: 5px;
+}
+
+.plan-details p {
+  color: var(--army-light);
+}
+
+.trial-banner {
+  background: rgba(75, 83, 32, 0.2);
+  border: 1px solid var(--army-green);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.trial-icon {
+  font-size: 2rem;
+}
+
+.trial-text h3 {
+  color: var(--army-green);
+  margin-bottom: 5px;
+}
+
+.trial-text p {
+  color: var(--off-white);
+}
+
+.plan-features {
+  list-style-type: none;
+  margin-top: 10px;
+  color: var(--army-light);
+  font-size: 0.9rem;
+}
+
+.plan-features li {
+  margin: 5px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.plan-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--army-green);
+}
+
+.trial-terms {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 4px;
+  background: rgba(75, 83, 32, 0.1);
+  color: var(--army-light);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.signup-form button {
+  margin-top: 24px;
+  padding: 16px;
+  border: none;
+  border-radius: 4px;
+  background: var(--army-green);
+  color: var(--off-white);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.signup-form button:hover {
+  background: var(--army-light);
+}
+
+.login-link {
+  margin-top: 16px;
+  color: #737373;
+  text-align: center;
+}
+
+.login-link a {
+  color: var(--off-white);
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+.signup-box {
+  padding: 40px;
+}
+
+.signup-form input {
+  padding: 14px;
+}
+
+.signup-form button {
+  padding: 14px;
+}
+}
+
+@media (max-width: 768px) {
+.signup-container {
+  padding: 40px 0;
+}
+
+.signup-box {
+  padding: 30px;
+}
+
+.signup-form input {
+  padding: 12px;
+}
+
+.signup-form button {
+  padding: 12px;
+}
+
+.trial-banner {
+  flex-direction: column;
+  text-align: center;
+}
+
+.trial-icon {
+  font-size: 1.5rem;
+}
+
+.trial-text h3 {
+  font-size: 1.2rem;
+}
+
+.trial-text p {
+  font-size: 0.9rem;
+}
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieMatch - Sign Up</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body class="signup-page">
+  <nav>
+    <div class="nav-left">
+      <svg class="moviematch-logo" viewBox="0 0 200 50">
+        <defs>
+          <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:var(--army-green);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:var(--army-light);stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <text x="10" y="35" class="logo-text">
+          <tspan>Movie</tspan>
+          <tspan class="logo-highlight">Match</tspan>
+        </text>
+        <path d="M8 40 L192 40" stroke="url(#logoGradient)" stroke-width="2" />
+      </svg>
+    </div>
+  </nav>
+
+  <main class="signup-container">
+    <div class="signup-box">
+      <h1>Create Account</h1>
+      <form class="signup-form" id="signup-form">
+        <input type="text" placeholder="Full Name" required aria-label="Full Name">
+        <input type="email" placeholder="Email" required aria-label="Email">
+        <input type="password" placeholder="Password" required aria-label="Password">
+        <input type="password" placeholder="Confirm Password" required aria-label="Confirm Password">
+        <div class="plan-selection">
+          <h3>Choose your plan:</h3>
+          <div class="plan-options">
+            <label class="plan">
+              <input type="radio" name="plan" value="basic" checked aria-label="Basic Plan">
+              <div class="plan-details">
+                <h4>Basic</h4>
+                <p>$8.99/month</p>
+                <ul class="plan-features">
+                  <li>HD streaming</li>
+                  <li>Watch on 1 device</li>
+                </ul>
+              </div>
+            </label>
+            <label class="plan">
+              <input type="radio" name="plan" value="standard" aria-label="Standard Plan">
+              <div class="plan-details">
+                <h4>Standard</h4>
+                <p>$13.99/month</p>
+                <ul class="plan-features">
+                  <li>Full HD streaming</li>
+                  <li>Watch on 2 devices</li>
+                  <li>Download for offline viewing</li>
+                </ul>
+              </div>
+            </label>
+            <label class="plan">
+              <input type="radio" name="plan" value="premium" aria-label="Premium Plan">
+              <div class="plan-details">
+                <h4>Premium</h4>
+                <p>$17.99/month</p>
+                <ul class="plan-features">
+                  <li>4K Ultra HD streaming</li>
+                  <li>Watch on 4 devices</li>
+                  <li>Download for offline viewing</li>
+                  <li>Priority customer support</li>
+                </ul>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="payment-section" id="payment-section" style="display: none;">
+          <h3>Payment Information:</h3>
+          <input type="text" placeholder="Card Number" required aria-label="Card Number">
+          <input type="text" placeholder="Name on Card" required aria-label="Name on Card">
+          <input type="text" placeholder="Expiry Date (MM/YY)" required aria-label="Expiry Date">
+          <input type="text" placeholder="CVV" required aria-label="CVV">
+        </div>
+        <button type="submit">Sign Up</button>
+      </form>
+      <div class="login-link">
+        Already have an account? <a href="login.html" id="login-link">Sign in</a>
+      </div>
+    </div>
+  </main>
+  <script src="signup.js"></script>
+</body>
+</html>

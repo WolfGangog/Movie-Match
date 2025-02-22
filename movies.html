@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieMatch - Browse</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="movies.css">
+</head>
+<body class="browse-page">
+  <nav class="browse-nav">
+    <div class="nav-left">
+      <svg class="moviematch-logo" viewBox="0 0 200 50">
+        <defs>
+          <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:var(--army-green);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:var(--army-light);stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <text x="10" y="35" class="logo-text">
+          <tspan fill="var(--army-green)">Movie</tspan>
+          <tspan fill="var(--army-light)">Match</tspan>
+        </text>
+        <path d="M8 40 L192 40" stroke="url(#logoGradient)" stroke-width="2" />
+      </svg>
+      <div class="nav-links">
+        <a href="movies.html" class="active">Movies</a>
+        <a href="sports.html">Sports</a>
+        <a href="TVseries.html">TV-series</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <input type="search" placeholder="Search movies..." class="search-bar">
+      <div class="user-profile">
+        <a href="profile.html">
+          <img src="https://via.placeholder.com/32" alt="User" class="profile-pic">
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="browse-content">
+    <section class="featured-section">
+      <div class="featured-content">
+        <h1>Featured</h1>
+        <div class="featured-movies">
+          <div class="featured-movie" onclick="openVideoPlayer('Oppenheimer')">
+            <h2>Oppenheimer</h2>
+            <!-- <video src="kaiju8\Kaiju No 8 S01 E01.mp4"></video> -->
+            <p>Watch Now</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="movies-grid">
+      <h2>New in 2024</h2>
+      <div class="movies-container" id="moviesContainer"></div>
+    </section>
+  </main>
+  <section class="media-queue">
+    <h2>My Queue</h2>
+    <div class="queue-container" id="queueContainer"></div>
+  </section>
+  <script src="movies.js"></script>
+</body>
+</html>

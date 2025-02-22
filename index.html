@@ -1,0 +1,119 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieMatch - Unlimited Movies & Shows</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      <svg class="moviematch-logo" viewBox="0 0 200 50">
+        <defs>
+          <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:var(--army-green);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:var(--army-light);stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <text x="10" y="35" class="logo-text">
+          <tspan>Movie</tspan>
+          <tspan class="logo-highlight">Match</tspan>
+        </text>
+        <path d="M8 40 L192 40" stroke="url(#logoGradient)" stroke-width="2" />
+      </svg>
+    </div>
+    <div class="nav-right">
+      <select class="language-select">
+        <option>English</option>
+        <option>Español</option>
+      </select>
+      <a href="login.html"><button class="signin-btn">Sign In</button></a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Where Entertainment Meets Innovation</h1>
+        <h2>Join millions of viewers discovering their perfect content match</h2>
+        <div class="hero-features">
+          <div class="feature-highlight">
+            <h3>Personalized Recommendations</h3>
+            <p>Our advanced matching algorithm learns your taste to suggest content you'll love.</p>
+          </div>
+          <div class="feature-highlight">
+            <h3>Live Sports Coverage</h3>
+            <p>Never miss a game with our extensive live sports streaming options.</p>
+          </div>
+          <div class="feature-highlight">
+            <h3>Premium Content Library</h3>
+            <p>Access thousands of movies and shows, from classics to latest releases.</p>
+          </div>
+        </div>
+        <div class="cta-buttons">
+          <a href="signup.html" class="cta-primary">Start Your Free Trial</a>
+          <a href="movies.html" class="cta-secondary">Browse Content</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="features">
+      <div class="feature">
+        <div class="feature-text">
+          <h2>Intelligent Content Discovery</h2>
+          <p>Our AI-powered platform analyzes your viewing habits to create a personalized streaming experience. The more you watch, the better your recommendations become.</p>
+        </div>
+        <div class="feature-media tv-animation">
+          <div class="tv-container">
+            <svg class="tv-frame" viewBox="0 0 640 480">
+              <rect x="0" y="0" width="640" height="480" rx="15"/>
+            </svg>
+            <div class="tv-screen"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature dark">
+        <div class="feature-text">
+          <h2>Watch Anywhere, Anytime</h2>
+          <p>Stream on your favorite devices or download for offline viewing. Your entertainment goes wherever you go.</p>
+        </div>
+        <div class="feature-media">
+          <div class="download-animation">
+            <div class="phone-container">
+              <svg class="phone-frame" viewBox="0 0 320 640">
+                <rect x="0" y="0" width="320" height="640" rx="30"/>
+              </svg>
+              <div class="phone-screen"></div>
+            </div>
+            <div class="download-indicator">
+              <div class="download-icon"></div>
+              <div class="download-text">Downloading...</div>
+              <div class="download-progress"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="https://help.moviematch.com">Questions? Contact us</a>
+        <a href="https://help.moviematch.com/faq">FAQ</a>
+        <a href="https://help.moviematch.com/account">Account</a>
+        <a href="https://media.moviematch.com">Media Center</a>
+        <a href="https://investors.moviematch.com">Investor Relations</a>
+        <a href="https://jobs.moviematch.com">Jobs</a>
+        <a href="https://moviematch.com/redeem">Redeem Gift Cards</a>
+        <a href="https://moviematch.com/watch">Ways to Watch</a>
+        <a href="https://help.moviematch.com/legal/terms">Terms of Use</a>
+        <a href="https://help.moviematch.com/legal/privacy">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
